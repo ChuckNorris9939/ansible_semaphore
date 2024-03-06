@@ -1,3 +1,4 @@
-- hosts: all
-  roles:
-  - ping
+- hosts:
+    - all
+  tasks:
+    - action: ping
