@@ -5,6 +5,5 @@
   tasks:
     - name: Show Docker Containers
       command: /bin/docker ps
-      register: results
-    - debug:
-      var: results.stdout
+      register: docker
+    - debug: var=docker.stdout_lines
