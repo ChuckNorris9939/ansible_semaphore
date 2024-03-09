@@ -4,6 +4,6 @@
   become: true
   tasks:
     - name: Show Docker Containers
-      command: '/bin/docker container ls --format "table {{.Names}}\t{{.CreatedAt}}\t{{.Status}}"'
+      command: "/bin/docker container ls --format "table {{.Names}}\t{{.CreatedAt}}\t{{.Status}}""
       register: docker
     - debug: var=docker.stdout_lines
