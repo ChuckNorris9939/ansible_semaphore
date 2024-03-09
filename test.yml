@@ -1,0 +1,9 @@
+---
+- hosts: all
+
+  become: true
+  tasks:
+    - name: Show Docker Containers
+      command: /bin/docker ps
+      register: docker
+    - debug: var=cat.stdout_lines
