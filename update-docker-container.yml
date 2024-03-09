@@ -15,10 +15,10 @@
         --rolling-restart \
         --include-stopped
     - name: update saltbox apps
-      ansible.builtin.shell: sb install sandbox-alltube authelia autoscan bazarr dozzle jackett jellyfin sandbox-krusader lidarr sandbox-mkvtoolnix netdata organizr overseerr sandbox-plex-auto-languages portainer radarr readarr rutorrent qbittorrent sonarr tautulli sandbox-threadfin traefik sandbox-vaultwarden emby sandbox-sqlitebrowser gluetun grafana sandbox-n8n sandbox-plex-meta-manager sandbox-recyclarr sandbox-syncthing sandbox-telegraf sandbox-filebrowser
-    - name: update saltbox apps (only PLEX!)
-      ansible.builtin.shell: sb install plex
+      ansible.builtin.shell: sb install sandbox-alltube authelia autoscan bazarr dozzle jackett jellyfin sandbox-krusader lidarr sandbox-mkvtoolnix netdata organizr overseerr plex sandbox-plex-auto-languages portainer radarr readarr rutorrent qbittorrent sonarr tautulli sandbox-threadfin traefik sandbox-vaultwarden emby sandbox-sqlitebrowser gluetun grafana sandbox-n8n sandbox-plex-meta-manager sandbox-recyclarr sandbox-syncthing sandbox-telegraf sandbox-filebrowser sandbox-unmanic sandbox-privatebin sandbox-makemkv sandbox-tdarr sandbox-jdownloader2 sandbox-influxdb
     - name: update JellyPlex-Watched
       ansible.builtin.shell: docker-compose down && docker-compose up
       args:
         chdir: /opt/JellyPlex-Watched/
+    - name: update saltbox apps (only PLEX!)
+      ansible.builtin.shell: sb install plex
