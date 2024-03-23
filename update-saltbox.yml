@@ -10,7 +10,7 @@
     - name: update saltbox repo
       ansible.builtin.shell: sb update
     - name: update saltbox apps
-      ansible.builtin.shell: sb install sandbox-alltube authelia autoscan bazarr dozzle jackett jellyfin sandbox-krusader lidarr sandbox-mkvtoolnix netdata organizr overseerr plex sandbox-plex-auto-languages portainer radarr readarr rutorrent qbittorrent sonarr tautulli sandbox-threadfin traefik sandbox-vaultwarden emby sandbox-sqlitebrowser gluetun grafana sandbox-n8n sandbox-plex-meta-manager sandbox-recyclarr sandbox-syncthing sandbox-telegraf sandbox-filebrowser sandbox-unmanic sandbox-privatebin sandbox-makemkv sandbox-tdarr sandbox-jdownloader2 sandbox-influxdb
+      ansible.builtin.shell: sb install sandbox-alltube authelia autoscan bazarr dozzle jackett jellyfin sandbox-krusader lidarr sandbox-mkvtoolnix netdata organizr overseerr plex sandbox-plex-auto-languages portainer radarr readarr rutorrent qbittorrent sonarr tautulli sandbox-threadfin traefik sandbox-vaultwarden emby sandbox-sqlitebrowser gluetun grafana sandbox-n8n sandbox-plex-meta-manager sandbox-recyclarr sandbox-syncthing sandbox-telegraf sandbox-filebrowser sandbox-unmanic sandbox-privatebin sandbox-makemkv sandbox-tdarr sandbox-jdownloader2 sandbox-influxdb sandbox-tqm
     - name: update JellyPlex-Watched
       ansible.builtin.shell: docker-compose down && docker-compose up
       args:
