@@ -10,10 +10,12 @@
     - name: update saltbox repo
       ansible.builtin.shell: sb update
     - name: update saltbox apps
-      ansible.builtin.shell: sb install sandbox-alltube authelia autoscan bazarr dozzle jackett jellyfin sandbox-krusader lidarr sandbox-mkvtoolnix netdata organizr overseerr plex sandbox-plex-auto-languages portainer radarr readarr rutorrent qbittorrent sonarr tautulli sandbox-threadfin traefik sandbox-vaultwarden emby sandbox-sqlitebrowser gluetun grafana sandbox-n8n sandbox-plex-meta-manager sandbox-recyclarr sandbox-syncthing sandbox-telegraf sandbox-filebrowser sandbox-unmanic sandbox-privatebin sandbox-makemkv sandbox-tdarr sandbox-jdownloader2 sandbox-influxdb sandbox-tqm
-    - name: update JellyPlex-Watched
+      ansible.builtin.shell: sb install sandbox-alltube authelia autoscan bazarr dozzle jackett jellyfin sandbox-krusader lidarr sandbox-mkvtoolnix netdata organizr overseerr plex sandbox-plex-auto-languages portainer radarr readarr rutorrent qbittorrent sonarr tautulli sandbox-threadfin sandbox-vaultwarden emby sandbox-sqlitebrowser grafana sandbox-n8n sandbox-plex-meta-manager sandbox-recyclarr sandbox-syncthing sandbox-telegraf sandbox-filebrowser sandbox-unmanic sandbox-privatebin sandbox-makemkv sandbox-tdarr sandbox-jdownloader2 sandbox-influxdb sandbox-tqm
+    - name: update saltbox apps (JellyPlex-Watched)
       ansible.builtin.shell: docker-compose down && docker-compose up -d
       args:
         chdir: /opt/JellyPlex-Watched/
-    - name: update saltbox apps (only PLEX!)
+    - name: update saltbox apps (traefik + gluetun)
+      ansible.builtin.shell: sb install gluetun traefik
+    - name: update saltbox apps (plex)
       ansible.builtin.shell: sb install plex
